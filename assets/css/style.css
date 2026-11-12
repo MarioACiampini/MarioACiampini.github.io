@@ -26,6 +26,8 @@
   --muted: #4d6366;
   --line: #d3e4e8;
 
+  --ease-sine: cubic-bezier(0.37, 0, 0.63, 1);      /* easeInOutSine: harmonic, physical motion */
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);   /* strong ease-in-out: deliberate changes */
   --radius: 14px;
   --wrap: 1100px;
   --font-head: "Space Grotesk", system-ui, sans-serif;
@@ -252,4 +254,101 @@ a, button { touch-action: manipulation; }
   .chips a:hover { border-color: var(--accent-ink); }
   a.pub-title:hover { color: var(--accent-ink); text-decoration: underline; }
   .pub-links a:hover { border-color: var(--accent-ink); }
+}
+
+/* ---------- research illustrations (home page) ----------
+   Explanatory loops of the four physical systems. Paused off-screen (see home layout script);
+   with reduced motion only opacity changes remain. */
+.theme-anim { display: block; margin: 0 0 12px; }
+.theme-anim svg { display: block; width: 100%; max-width: 300px; height: auto; overflow: visible; }
+@media (max-width: 760px) { .theme-anim svg { max-width: 220px; } }
+.anim * { transform-box: view-box; }
+.anim .a-axis { stroke: var(--accent-ink); stroke-opacity: .25; stroke-width: 1; }
+.anim .a-pot { fill: none; stroke: var(--accent-ink); stroke-width: 2; stroke-linecap: round; }
+.anim .a-packet { fill: var(--aqua); fill-opacity: .55; stroke: var(--accent-ink); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.anim .a-fringes { fill: var(--accent-ink); fill-opacity: .35; }
+.anim .a-particle { fill: var(--warm); stroke: var(--warm-ink); stroke-width: 1; }
+.anim .a-label { font: 600 12px var(--font-head); fill: var(--muted); }
+.anim .a-note { font: 600 9px var(--font-head); fill: var(--warm-ink); }
+.anim .a-beam { fill: var(--aqua); fill-opacity: .28; }
+.anim .a-coupling { fill: none; stroke: var(--accent-ink); stroke-width: 1.5; stroke-opacity: .5; }
+.anim .a-loop { fill: none; stroke: var(--accent-ink); stroke-width: 1.2; stroke-dasharray: 3 3; stroke-opacity: .6; }
+.anim .a-pump { stroke: var(--warm); stroke-width: 2.5; stroke-linecap: round; }
+.anim .a-crystal { fill: var(--band); stroke: var(--accent-ink); stroke-width: 1.5; }
+.anim .a-guide { fill: none; stroke: var(--accent-ink); stroke-opacity: .45; stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+.anim .a-det { fill: var(--warm); fill-opacity: .15; stroke: var(--accent-ink); stroke-width: 1.5; }
+.anim .a-photon { fill: var(--aqua); stroke: var(--accent-ink); stroke-width: 1.2; }
+
+/* 1. trapped packet breathes (squeezing), trap switches off, packet spreads, fringes appear */
+.qc-packet { transform-origin: 120px 90px; animation: qc-packet 7s var(--ease-sine) infinite; }
+.qc-well { animation: qc-well 7s var(--ease-sine) infinite; }
+.qc-fringes { opacity: 0; animation: qc-fringes 7s var(--ease-sine) infinite; }
+@keyframes qc-packet {
+  0%, 20%, 40% { transform: scale(1, 1); opacity: 1; }
+  10%, 30% { transform: scale(.75, 1.2); }
+  62%, 82% { transform: scale(3.6, .3); opacity: .35; }
+  90% { transform: scale(3.6, .3); opacity: 0; }
+  91% { transform: scale(1, 1); opacity: 0; }
+  100% { transform: scale(1, 1); opacity: 1; }
+}
+@keyframes qc-well { 0%, 40% { opacity: 1; } 46%, 90% { opacity: .12; } 100% { opacity: 1; } }
+@keyframes qc-fringes { 0%, 60% { opacity: 0; } 70%, 84% { opacity: 1; } 92%, 100% { opacity: 0; } }
+
+/* 2. Landauer erasure: thermal hops between 0 and 1, tilt, reset to 0, cost k_B T ln 2 */
+.th-tilt { transform-origin: 67px 92px; animation: th-tilt 10s var(--ease-in-out) infinite; }
+.th-bit { animation: th-bit 10s var(--ease-sine) infinite; }
+.th-zero { opacity: .45; animation: th-zero 10s ease infinite; }
+.th-cost { opacity: 0; animation: th-cost 10s ease infinite; }
+@keyframes th-tilt { 0%, 57% { transform: rotate(0deg); } 67%, 82% { transform: rotate(-18deg); } 92%, 100% { transform: rotate(0deg); } }
+@keyframes th-bit {
+  0%, 6% { transform: translate(0, 0); }
+  10% { transform: translate(53px, -36px); }
+  14% { transform: translate(106px, 0); }
+  18% { transform: translate(101px, 0); } 21% { transform: translate(110px, 0); } 24% { transform: translate(104px, 0); }
+  27% { transform: translate(106px, 0); }
+  31% { transform: translate(53px, -36px); }
+  35% { transform: translate(0, 0); }
+  39% { transform: translate(4px, 0); } 42% { transform: translate(-3px, 0); } 45% { transform: translate(0, 0); }
+  49% { transform: translate(53px, -36px); }
+  53%, 67% { transform: translate(106px, 0); }
+  71% { transform: translate(53px, -26px); }
+  75%, 100% { transform: translate(0, 0); }
+}
+@keyframes th-zero { 0%, 72% { opacity: .45; } 77%, 92% { opacity: 1; } 98%, 100% { opacity: .45; } }
+@keyframes th-cost { 0%, 70% { opacity: 0; } 76%, 90% { opacity: 1; } 96%, 100% { opacity: 0; } }
+
+/* 3. coupled particles: motion is generated in JS from the coupled-oscillator solution (home layout) */
+
+/* 4. photon pairs: constant speed along the guides, coincidence click at the detectors */
+.ph-up { animation: ph-up 3.6s linear infinite; }
+.ph-dn { animation: ph-dn 3.6s linear infinite; }
+.anim .a-flash { fill: var(--warm); opacity: 0; }
+.ph-det { animation: ph-det 3.6s ease infinite; }
+@keyframes ph-det { 0%, 64% { opacity: 0; } 67% { opacity: .85; } 85%, 100% { opacity: 0; } }
+@keyframes ph-up {
+  0% { transform: translate(0, 0); opacity: 0; }
+  3% { opacity: 1; }
+  11.5% { transform: translate(25px, -24px); }
+  28.8% { transform: translate(77px, -24px); }
+  36.9% { transform: translate(91px, -4px); }
+  42.3% { transform: translate(107px, -4px); }
+  50.4% { transform: translate(121px, -24px); }
+  65.0% { transform: translate(165px, -24px); }
+  68% { opacity: 1; }
+  72%, 100% { transform: translate(165px, -24px); opacity: 0; }
+}
+@keyframes ph-dn {
+  0% { transform: translate(0, 0); opacity: 0; }
+  3% { opacity: 1; }
+  11.5% { transform: translate(25px, 24px); }
+  28.8% { transform: translate(77px, 24px); }
+  36.9% { transform: translate(91px, 4px); }
+  42.3% { transform: translate(107px, 4px); }
+  50.4% { transform: translate(121px, 24px); }
+  65.0% { transform: translate(165px, 24px); }
+  68% { opacity: 1; }
+  72%, 100% { transform: translate(165px, 24px); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .anim .m { animation: none; }
 }
