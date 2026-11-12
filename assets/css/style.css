@@ -192,7 +192,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; letter-spacing: -
 .pub { display: grid; grid-template-columns: 1fr; gap: 4px 20px; padding: 18px 0; border-bottom: 1px solid var(--line); margin: 0 !important; }
 @media (min-width: 640px) { .pub { grid-template-columns: 56px 1fr; } }
 .pub-year { font: 700 15px var(--font-head); color: var(--accent-ink); padding-top: 2px; font-variant-numeric: tabular-nums; }
-.pub-title { display: block; font: 600 17px/1.4 var(--font-head); color: var(--text); text-decoration: none; }
+.pub-title { display: block; font: 600 17px/1.45 var(--font-head); color: var(--text); text-decoration: none; }
 .pub-body p { margin: 4px 0 0; }
 .pub-authors { font-size: 15px; color: var(--muted); }
 .pub-authors .me { color: var(--text); }
