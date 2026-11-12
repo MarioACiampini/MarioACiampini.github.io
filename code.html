@@ -1,0 +1,30 @@
+---
+layout: page
+title: Code & Projects
+kicker: Open source
+subtitle: Software, analysis tools and side projects.
+permalink: /code/
+---
+{% comment %}
+  Projects come from _data/projects.yml — edit that file to add one.
+{% endcomment %}
+
+<p>Most of my code lives on <a href="{{ site.links.github }}">GitHub</a>.</p>
+
+{% assign projects = site.data.projects %}
+{% if projects and projects.size > 0 %}
+<div class="project-grid">
+  {% for p in projects %}
+  <a class="card" href="{{ p.url }}">
+    <h3>{{ p.name }}</h3>
+    <p>{{ p.description }}</p>
+    <p class="project-meta">{% if p.language %}{{ p.language }}{% endif %}{% if p.tags %} · {{ p.tags | join: " · " }}{% endif %}</p>
+  </a>
+  {% endfor %}
+</div>
+{% else %}
+<div class="placeholder">
+  <p><strong>Projects coming soon.</strong></p>
+  <p>Meanwhile, browse my repositories on <a href="{{ site.links.github }}">GitHub</a>.</p>
+</div>
+{% endif %}

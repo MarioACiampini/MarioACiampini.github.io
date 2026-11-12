@@ -1,0 +1,42 @@
+---
+layout: page
+title: Publications
+kicker: Peer-reviewed work
+subtitle: Grouped by research topic, newest first. My name is highlighted.
+permalink: /publications/
+---
+{% comment %}
+  Content of this page comes from _data/publications.yml — edit that file to add papers.
+{% endcomment %}
+{% assign topics = site.data.publications.topics %}
+{% assign papers = site.data.publications.papers %}
+
+<p>The complete and always up-to-date list is on <a href="{{ site.links.orcid }}">ORCID</a>.</p>
+
+<ul class="chips">
+  {% for t in topics %}<li><a href="#{{ t.id }}">{{ t.name }}</a></li>{% endfor %}
+  <li><a href="#proceedings">Conference proceedings</a></li>
+</ul>
+
+{% for t in topics %}
+{% assign list = papers | where: "topic", t.id | sort: "year" | reverse %}
+<section class="pub-topic" id="{{ t.id }}">
+  <h2>{{ t.name }}</h2>
+  <p class="blurb">{{ t.blurb }}</p>
+  <ol class="pubs">
+    {% for p in list %}{% include pub.html p=p %}{% endfor %}
+  </ol>
+</section>
+{% endfor %}
+
+<section class="pub-topic" id="proceedings">
+  <h2>Conference proceedings</h2>
+  <ol class="pubs">
+    {% for c in site.data.publications.proceedings %}
+    <li class="pub">
+      <span class="pub-year">{{ c.year }}</span>
+      <div class="pub-body"><p class="pub-venue" style="margin:0">{{ c.text }}{% if c.doi %} · <a href="https://doi.org/{{ c.doi }}">DOI</a>{% endif %}</p></div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>

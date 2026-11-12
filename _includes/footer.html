@@ -1,0 +1,14 @@
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-name">{{ site.author.full_name }}</p>
+      <p>{{ site.author.position }}, <a href="{{ site.author.group_url }}">{{ site.author.group }}</a><br>
+      {{ site.author.institution }}<br>{{ site.author.address }}</p>
+    </div>
+    {% include social.html %}
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© {{ site.time | date: "%Y" }} {{ site.author.name }}</span>
+    <span>Built with Jekyll · hosted on GitHub Pages</span>
+  </div>
+</footer>

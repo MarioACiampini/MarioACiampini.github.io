@@ -1,0 +1,240 @@
+# =====================================================================
+#  PUBLICATIONS
+#  To add a paper, copy one entry (from "- title:" to the next one),
+#  paste it anywhere in the "papers" list and edit the fields.
+#  Papers are sorted automatically by year and grouped by "topic".
+#
+#  Fields:
+#    title, authors, journal, ref (volume, article/page), year   (required)
+#    doi, arxiv          (optional, without https://)
+#    topic               (one of the ids under "topics")
+#    selected: true      (also show on the home page)
+#    note                (optional badge, e.g. "Editors' Suggestion")
+#  Write your own name exactly as "M. A. Ciampini" so it is highlighted.
+# =====================================================================
+
+topics:
+  - id: levitated
+    name: Levitated optomechanics & quantum control
+    blurb: Optically levitated nanoparticles in vacuum, with programmable potentials, interactions and feedback.
+  - id: thermo
+    name: Thermodynamics of information & quantum thermodynamics
+    blurb: Memories, erasure, work extraction and entropy production in classical and quantum systems.
+  - id: photonic
+    name: Photonic entanglement & quantum networks
+    blurb: Hyperentangled and cluster states of photons, on chip and in bulk optics, and their characterisation.
+  - id: metrology
+    name: Quantum metrology & quantum channels
+    blurb: Multiparameter quantum estimation and experimental bounds on the capacities of quantum channels.
+
+papers:
+
+  # ---------- Levitated optomechanics & quantum control ----------
+  - title: "Feedback stabilization of a nanoparticle at the intensity minimum of an optical double-well potential"
+    authors: "V. Mlynář, S. Dago, J. Rieser, M. A. Ciampini, M. Aspelmeyer, N. Kiesel, A. Kugi, A. Deutschmann-Olek"
+    journal: "Control Engineering Practice"
+    ref: "168, 106665"
+    year: 2026
+    doi: "10.1016/j.conengprac.2025.106665"
+    topic: levitated
+
+  - title: "Stabilizing nanoparticles in the intensity minimum: feedback levitation on an inverted potential"
+    authors: "S. Dago, J. Rieser, M. A. Ciampini, V. Mlynář, A. Kugi, M. Aspelmeyer, A. Deutschmann-Olek, N. Kiesel"
+    journal: "Optics Express"
+    ref: "32, 45133"
+    year: 2024
+    doi: "10.1364/OE.541267"
+    topic: levitated
+
+  - title: "Hollow-core fiber loading of nanoparticles into ultra-high vacuum"
+    authors: "S. Lindner, P. Juschitz, J. Rieser, Y. Y. Fein, M. Debiossac, M. A. Ciampini, M. Aspelmeyer, N. Kiesel"
+    journal: "Applied Physics Letters"
+    ref: "124, 143501"
+    year: 2024
+    doi: "10.1063/5.0190658"
+    arxiv: "2311.13920"
+    topic: levitated
+
+  - title: "Fast quantum interference of a nanoparticle via optical potential control"
+    authors: "L. Neumeier, M. A. Ciampini, O. Romero-Isart, M. Aspelmeyer, N. Kiesel"
+    journal: "Proceedings of the National Academy of Sciences"
+    ref: "121, e2306953121"
+    year: 2024
+    doi: "10.1073/pnas.2306953121"
+    arxiv: "2207.12539"
+    topic: levitated
+    selected: true
+
+  - title: "Tunable light-induced dipole-dipole interaction between optically levitated nanoparticles"
+    authors: "J. Rieser, M. A. Ciampini, H. Rudolph, N. Kiesel, K. Hornberger, B. A. Stickler, M. Aspelmeyer, U. Delić"
+    journal: "Science"
+    ref: "377, 987"
+    year: 2022
+    doi: "10.1126/science.abp9941"
+    arxiv: "2203.04198"
+    topic: levitated
+    selected: true
+
+  # ---------- Thermodynamics of information ----------
+  - title: "Erasure of a nonequilibrium memory beyond Landauer's bound using levitated optomechanics with spatio-temporal optical control"
+    authors: "M. A. Ciampini, T. Wenzl, M. Konopik, G. Thalhammer, M. Aspelmeyer, E. Lutz, N. Kiesel"
+    journal: "Physical Review Research"
+    ref: "7, 043321"
+    year: 2025
+    doi: "10.1103/r81x-zblx"
+    arxiv: "2107.04429"
+    topic: thermo
+    selected: true
+
+  - title: "Quantifying protocol efficiency: A thermodynamic figure of merit for classical and quantum state-transfer protocols"
+    authors: "Q. Wu, M. A. Ciampini, M. Paternostro, M. Carlesso"
+    journal: "Physical Review Research"
+    ref: "5, 023117"
+    year: 2023
+    doi: "10.1103/PhysRevResearch.5.023117"
+    arxiv: "2212.10100"
+    topic: thermo
+
+  - title: "Nonequilibrium quantum thermodynamics of a particle trapped in a controllable time-varying potential"
+    authors: "Q. Wu, L. Mancino, M. Carlesso, M. A. Ciampini, L. Magrini, N. Kiesel, M. Paternostro"
+    journal: "PRX Quantum"
+    ref: "3, 010322"
+    year: 2022
+    doi: "10.1103/PRXQuantum.3.010322"
+    arxiv: "2110.15888"
+    topic: thermo
+
+  - title: "Maxwell's demon in photonic systems"
+    authors: "L. Mancino, M. A. Ciampini, M. D. Vidrighin, M. Sbroscia, I. Gianani, M. Barbieri"
+    journal: "Thermodynamics in the Quantum Regime, Fundamental Theories of Physics (Springer)"
+    ref: "195, pp. 939–957"
+    year: 2018
+    doi: "10.1007/978-3-319-99046-0_39"
+    topic: thermo
+
+  - title: "Experimental extractable work-based multipartite separability criteria"
+    authors: "M. A. Ciampini, L. Mancino, A. Orieux, C. Vigliar, P. Mataloni, M. Paternostro, M. Barbieri"
+    journal: "npj Quantum Information"
+    ref: "3, 10"
+    year: 2017
+    doi: "10.1038/s41534-017-0011-9"
+    topic: thermo
+
+  # ---------- Photonic entanglement & quantum networks ----------
+  - title: "Visualizing multiqubit correlations using the Wigner function"
+    authors: "T. Tilma, M. A. Ciampini, M. J. Everitt, W. J. Munro, P. Mataloni, K. Nemoto, M. Barbieri"
+    journal: "The European Physical Journal D"
+    ref: "76, 90"
+    year: 2022
+    doi: "10.1140/epjd/s10053-022-00419-1"
+    arxiv: "1710.02460"
+    topic: photonic
+
+  - title: "Stimulated emission tomography: beyond polarization"
+    authors: "M. A. Ciampini, A. Geraldi, V. Cimini, C. Macchiavello, J. E. Sipe, M. Liscidini, P. Mataloni"
+    journal: "Optics Letters"
+    ref: "44, 41"
+    year: 2019
+    doi: "10.1364/OL.44.000041"
+    topic: photonic
+
+  - title: "Experimental signature of quantum Darwinism in photonic cluster states"
+    authors: "M. A. Ciampini, G. Pinna, P. Mataloni, M. Paternostro"
+    journal: "Physical Review A"
+    ref: "98, 020101(R)"
+    year: 2018
+    doi: "10.1103/PhysRevA.98.020101"
+    arxiv: "1803.01913"
+    topic: photonic
+
+  - title: "Experimental nonlocality-based network diagnostics of multipartite entangled states"
+    authors: "M. A. Ciampini, C. Vigliar, V. Cimini, S. Paesani, F. Sciarrino, A. Crespi, G. Corrielli, R. Osellame, P. Mataloni, M. Paternostro, M. Barbieri"
+    journal: "Scientific Reports"
+    ref: "7, 17122"
+    year: 2017
+    doi: "10.1038/s41598-017-17457-0"
+    topic: photonic
+
+  - title: "Structure of multipartite entanglement in random cluster-like photonic systems"
+    authors: "M. A. Ciampini, P. Mataloni, M. Paternostro"
+    journal: "Entropy"
+    ref: "19, 473"
+    year: 2017
+    doi: "10.3390/e19090473"
+    arxiv: "1707.06797"
+    topic: photonic
+
+  - title: "Path-polarization hyperentangled and cluster states of photons on a chip"
+    authors: "M. A. Ciampini, A. Orieux, S. Paesani, F. Sciarrino, G. Corrielli, A. Crespi, R. Ramponi, R. Osellame, P. Mataloni"
+    journal: "Light: Science & Applications"
+    ref: "5, e16064"
+    year: 2016
+    doi: "10.1038/lsa.2016.64"
+    topic: photonic
+
+  - title: "Experimental generation of robust entanglement from classical correlations via local dissipation"
+    authors: "A. Orieux, M. A. Ciampini, P. Mataloni, D. Bruß, M. Rossi, C. Macchiavello"
+    journal: "Physical Review Letters"
+    ref: "115, 160503"
+    year: 2015
+    doi: "10.1103/PhysRevLett.115.160503"
+    topic: photonic
+
+  # ---------- Quantum metrology & quantum channels ----------
+  - title: "Experimental lower bounds to the classical capacity of quantum channels"
+    authors: "M. A. Ciampini, Á. Cuevas, P. Mataloni, C. Macchiavello, M. F. Sacchi"
+    journal: "Physical Review A"
+    ref: "103, 062414"
+    year: 2021
+    doi: "10.1103/PhysRevA.103.062414"
+    arxiv: "2011.08749"
+    topic: metrology
+
+  - title: "Optimal measurements for simultaneous quantum estimation of multiple phases"
+    authors: "L. Pezzè, M. A. Ciampini, N. Spagnolo, P. C. Humphreys, A. Datta, I. A. Walmsley, M. Barbieri, F. Sciarrino, A. Smerzi"
+    journal: "Physical Review Letters"
+    ref: "119, 130504"
+    year: 2017
+    doi: "10.1103/PhysRevLett.119.130504"
+    arxiv: "1705.03687"
+    topic: metrology
+    note: "Editors' Suggestion"
+    selected: true
+
+  - title: "Experimental detection of quantum channel capacities"
+    authors: "Á. Cuevas, M. Proietti, M. A. Ciampini, S. Duranti, P. Mataloni, M. F. Sacchi, C. Macchiavello"
+    journal: "Physical Review Letters"
+    ref: "119, 100502"
+    year: 2017
+    doi: "10.1103/PhysRevLett.119.100502"
+    topic: metrology
+
+  - title: "Quantum-enhanced multiparameter estimation in multiarm interferometers"
+    authors: "M. A. Ciampini, N. Spagnolo, C. Vitelli, L. Pezzè, A. Smerzi, F. Sciarrino"
+    journal: "Scientific Reports"
+    ref: "6, 28881"
+    year: 2016
+    doi: "10.1038/srep28881"
+    topic: metrology
+
+# Conference proceedings (shown in a separate list at the bottom)
+proceedings:
+  - year: 2021
+    text: "Levitated nanoparticles as non-equilibrium memories: experimental verification of the generalised Landauer's principle — APS March Meeting, X17.007"
+  - year: 2020
+    text: "Non-equilibrium memories with levitated nanoparticles: experimental verification of the generalised Landauer's principle — Optical Trapping and Optical Micromanipulation XVII, Proc. SPIE 11463, 114631N"
+  - year: 2019
+    text: "Experimental Quantum Darwinism simulator using photonic cluster states — Quantum Information and Measurement (OSA), S2D.6"
+    doi: "10.1364/QIM.2019.S2D.6"
+  - year: 2018
+    text: "Stimulated emission tomography of hyperentangled states — Conference on Lasers and Electro-Optics (CLEO), San Jose"
+  - year: 2017
+    text: "On chip analysis of path-polarization hyperentangled cluster photon states — Proc. SPIE 10118, 101180I"
+    doi: "10.1117/12.2251407"
+  - year: 2016
+    text: "Experimental entanglement-enhanced work extraction based on a Maxwell's demon — CLEO: QELS Fundamental Science, FTu4D.7"
+    doi: "10.1364/CLEO_QELS.2016.FTu4D.7"
+  - year: 2015
+    text: "Switching on entanglement through local noise — European Quantum Electronics Conference, EB-P-9"
+  - year: 2015
+    text: "Hyperentangled photon states on a chip — European Conference on Lasers and Electro-Optics, JSV-2-2"

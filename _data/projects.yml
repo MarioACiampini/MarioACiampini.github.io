@@ -1,0 +1,13 @@
+# =====================================================================
+#  CODE & PROJECTS — shown on the "Code" page.
+#  The list is empty for now. To add a project, remove the "[]" below
+#  and add entries like the commented example.
+# =====================================================================
+
+[]
+
+# - name: levitation-fpga-control
+#   description: FPGA-based real-time feedback for levitated nanoparticles.
+#   url: https://github.com/MarioACiampini/levitation-fpga-control
+#   language: Python
+#   tags: [feedback, FPGA, optomechanics]

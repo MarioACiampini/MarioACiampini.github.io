@@ -1,0 +1,60 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="fringes" aria-hidden="true"></div>
+  <div class="beam" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <p class="kicker">{{ site.author.position }} · University of Vienna</p>
+      <h1>Mario A.<br><span class="glow">Ciampini</span></h1>
+      <p class="lead">I trap nanoparticles with light and make them behave quantum mechanically, using them to probe where <strong>quantum physics</strong>, <strong>information</strong> and <strong>thermodynamics</strong> meet.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="{{ '/research/' | relative_url }}">My research</a>
+        <a class="btn btn-ghost" href="{{ '/publications/' | relative_url }}">Publications</a>
+        <a class="btn btn-ghost" href="mailto:{{ site.author.email }}">Get in touch</a>
+      </div>
+    </div>
+    <figure class="hero-photo">
+      <img src="{{ site.author.photo | relative_url }}" alt="Portrait of {{ site.author.name }}" width="190" height="230">
+    </figure>
+  </div>
+</section>
+
+<section class="wrap section about">
+  <div class="prose">
+    {{ content }}
+  </div>
+  <aside class="facts">
+    <dl>
+      <dt>Now</dt><dd>{{ site.author.position }}, {{ site.author.group }}, University of Vienna</dd>
+      <dt>PhD</dt><dd>Physics, Sapienza University of Rome, 2017</dd>
+      <dt>Field</dt><dd>Levitated optomechanics, quantum optics, thermodynamics of information</dd>
+    </dl>
+    {% include social.html %}
+  </aside>
+</section>
+
+<section class="section band">
+  <div class="wrap">
+    <h2 class="section-title">Research themes</h2>
+    <div class="cards">
+      {% for t in site.data.research %}
+      <a class="card" href="{{ '/research/' | relative_url }}#{{ t.id }}">
+        <span class="card-num">0{{ forloop.index }}</span>
+        <h3>{{ t.name }}</h3>
+        <p>{{ t.short }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <h2 class="section-title">Selected publications</h2>
+  {% assign selected = site.data.publications.papers | where: "selected", true | sort: "year" | reverse %}
+  <ol class="pubs">
+    {% for p in selected %}{% include pub.html p=p %}{% endfor %}
+  </ol>
+  <p><a class="more" href="{{ '/publications/' | relative_url }}">All publications by topic →</a></p>
+</section>

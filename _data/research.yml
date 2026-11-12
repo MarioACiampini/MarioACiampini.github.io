@@ -1,0 +1,14 @@
+# Research themes — shown as cards on the home page.
+# The full text for each theme lives in research.md (the "id" must match).
+- id: quantum-control
+  name: Quantum control of levitated nanoparticles
+  short: Shaping optical potentials in space and time to push a levitated nanoparticle into the quantum regime.
+- id: thermodynamics
+  name: Thermodynamics of information
+  short: Memories, erasure and entropy production, tested on a single particle beyond the Landauer bound.
+- id: interacting
+  name: Interacting levitated systems & feedback
+  short: Coupled particles, ultra-clean loading into vacuum, and real-time FPGA feedback control.
+- id: photonics
+  name: Photonic quantum information
+  short: Hyperentangled and cluster states of photons, quantum metrology and quantum channels.
