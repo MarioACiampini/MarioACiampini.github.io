@@ -12,7 +12,7 @@ Every time you save a change on GitHub, the site rebuilds itself in about a minu
 | What you want to change | File |
 |---|---|
 | Bio on the home page | `index.md` |
-| Hero sentence, buttons, quick facts | `_layouts/home.html` |
+| Hero sentence and buttons | `_layouts/home.html` |
 | Research themes (long text) | `research.md` |
 | Research cards on home page | `_data/research.yml` |
 | **Publications** (add a paper) | `_data/publications.yml` |

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Code & Projects
-kicker: Open source
 subtitle: Software, analysis tools and side projects.
 permalink: /code/
 ---
@@ -13,15 +12,15 @@ permalink: /code/
 
 {% assign projects = site.data.projects %}
 {% if projects and projects.size > 0 %}
-<div class="project-grid">
+<ul class="project-grid">
   {% for p in projects %}
-  <a class="card" href="{{ p.url }}">
-    <h3>{{ p.name }}</h3>
+  <li>
+    <h3><a href="{{ p.url }}">{{ p.name }}</a></h3>
     <p>{{ p.description }}</p>
     <p class="project-meta">{% if p.language %}{{ p.language }}{% endif %}{% if p.tags %} · {{ p.tags | join: " · " }}{% endif %}</p>
-  </a>
+  </li>
   {% endfor %}
-</div>
+</ul>
 {% else %}
 <div class="placeholder">
   <p><strong>Projects coming soon.</strong></p>

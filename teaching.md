@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Teaching
-kicker: Teaching & mentoring
 subtitle: Courses, supervision and material for students.
 permalink: /teaching/
 ---

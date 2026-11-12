@@ -1,13 +1,12 @@
 ---
 layout: page
 title: Curriculum Vitae
-kicker: CV
 subtitle: Positions, education, awards, talks and service.
 permalink: /cv/
 ---
 
 <!-- To offer a PDF download: upload your CV as assets/cv.pdf and uncomment the next line -->
-<!-- [Download CV (PDF)](/assets/cv.pdf){: .btn .btn-primary} -->
+<!-- [Download CV (PDF)](/assets/cv.pdf){: .btn} -->
 
 ## Positions
 
