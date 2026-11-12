@@ -1,4 +1,4 @@
-# mariociampini.com: personal academic website
+# mariociampini.eu: personal academic website
 
 A static website built with [Jekyll](https://jekyllrb.com/) and hosted for free on **GitHub Pages**.
 Every time you save a change on GitHub, the site rebuilds itself in about a minute.
