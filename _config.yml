@@ -11,8 +11,8 @@ description: >-
   and the thermodynamics of information.
 lang: en
 
-# Set this to https://mariociampini.com once the domain is connected
-url: ""
+# Public address of the site
+url: "https://mariociampini.eu"
 baseurl: ""
 
 author:
