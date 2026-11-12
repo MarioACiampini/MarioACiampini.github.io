@@ -39,7 +39,7 @@ layout: default
 <section class="section">
   <div class="wrap">
     <h2 class="section-title">Selected publications</h2>
-    {% assign selected = site.data.publications.papers | where: "selected", true | sort: "year" | reverse %}
+    {% assign selected = site.data.publications.papers | where: "selected", true | sort: "year", "last" | reverse %}
     <ol class="pubs">
       {% for p in selected %}{% include pub.html p=p %}{% endfor %}
     </ol>

@@ -18,7 +18,7 @@ permalink: /publications/
 </ul>
 
 {% for t in topics %}
-{% assign list = papers | where: "topic", t.id | sort: "year" | reverse %}
+{% assign list = papers | where: "topic", t.id | sort: "year", "last" | reverse %}
 <section class="pub-topic" id="{{ t.id }}">
   <h2>{{ t.name }}</h2>
   <p class="blurb">{{ t.blurb }}</p>
@@ -27,6 +27,19 @@ permalink: /publications/
   </ol>
 </section>
 {% endfor %}
+
+{% assign topic_ids = topics | map: "id" %}
+{% assign other = "" | split: "" %}
+{% for p in papers %}{% unless topic_ids contains p.topic %}{% assign other = other | push: p %}{% endunless %}{% endfor %}
+{% if other.size > 0 %}
+{% assign other = other | sort: "year", "last" | reverse %}
+<section class="pub-topic" id="other">
+  <h2>Other</h2>
+  <ol class="pubs">
+    {% for p in other %}{% include pub.html p=p %}{% endfor %}
+  </ol>
+</section>
+{% endif %}
 
 <section class="pub-topic" id="proceedings">
   <h2>Conference proceedings</h2>

@@ -1,15 +1,19 @@
 {% assign p = include.p %}
-{% assign me = "M. A. Ciampini" %}
-{% assign me_bold = "<strong class='me'>M. A. Ciampini</strong>" %}
+{% comment %} Highlight my name in any of the spellings used in author lists {% endcomment %}
+{% assign authors = p.authors
+  | replace: "Mario A. Ciampini", "<strong class='me'>Mario A. Ciampini</strong>"
+  | replace: "M. A. Ciampini", "<strong class='me'>M. A. Ciampini</strong>"
+  | replace: "M. Ciampini", "<strong class='me'>M. Ciampini</strong>" %}
+{% if p.doi %}{% capture link %}https://doi.org/{{ p.doi }}{% endcapture %}{% elsif p.arxiv %}{% capture link %}https://arxiv.org/abs/{{ p.arxiv }}{% endcapture %}{% else %}{% assign link = nil %}{% endif %}
 <li class="pub">
-  <span class="pub-year">{{ p.year }}</span>
+  <span class="pub-year">{% if p.year %}{{ p.year }}{% else %}Preprint{% endif %}</span>
   <div class="pub-body">
-    <a class="pub-title" href="{% if p.doi %}https://doi.org/{{ p.doi }}{% elsif p.arxiv %}https://arxiv.org/abs/{{ p.arxiv }}{% endif %}">{{ p.title }}</a>
-    <p class="pub-authors">{{ p.authors | replace: me, me_bold }}</p>
-    <p class="pub-venue"><em>{{ p.journal }}</em>{% if p.ref %} {{ p.ref }}{% endif %} ({{ p.year }}){% if p.note %} · <span class="badge">{{ p.note }}</span>{% endif %}</p>
-    <p class="pub-links">
-      {% if p.doi %}<a href="https://doi.org/{{ p.doi }}" aria-label="DOI: {{ p.title | escape }}">DOI</a>{% endif %}
-      {% if p.arxiv %}<a href="https://arxiv.org/abs/{{ p.arxiv }}" aria-label="arXiv preprint: {{ p.title | escape }}">arXiv</a>{% endif %}
-    </p>
+    {% if link %}<a class="pub-title" href="{{ link }}">{{ p.title }}</a>{% else %}<span class="pub-title">{{ p.title }}</span>{% endif %}
+    <p class="pub-authors">{{ authors }}</p>
+    <p class="pub-venue"><em>{{ p.journal }}</em>{% if p.ref %} {{ p.ref }}{% endif %}{% if p.year %} ({{ p.year }}){% endif %}{% if p.note %} · <span class="badge">{{ p.note }}</span>{% endif %}</p>
+    {% if p.doi or p.arxiv %}<p class="pub-links">
+      {% if p.doi %}<a href="https://doi.org/{{ p.doi }}" aria-label="DOI: {{ p.title | strip_html | escape }}">DOI</a>{% endif %}
+      {% if p.arxiv %}<a href="https://arxiv.org/abs/{{ p.arxiv }}" aria-label="arXiv preprint: {{ p.title | strip_html | escape }}">arXiv</a>{% endif %}
+    </p>{% endif %}
   </div>
 </li>

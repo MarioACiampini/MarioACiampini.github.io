@@ -192,7 +192,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; letter-spacing: -
 .pub { display: grid; grid-template-columns: 1fr; gap: 4px 20px; padding: 18px 0; border-bottom: 1px solid var(--line); margin: 0 !important; }
 @media (min-width: 640px) { .pub { grid-template-columns: 56px 1fr; } }
 .pub-year { font: 700 15px var(--font-head); color: var(--accent-ink); padding-top: 2px; font-variant-numeric: tabular-nums; }
-.pub-title { font: 600 17px/1.4 var(--font-head); color: var(--text); text-decoration: none; }
+.pub-title { display: block; font: 600 17px/1.4 var(--font-head); color: var(--text); text-decoration: none; }
 .pub-body p { margin: 4px 0 0; }
 .pub-authors { font-size: 15px; color: var(--muted); }
 .pub-authors .me { color: var(--text); }
@@ -213,8 +213,8 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; letter-spacing: -
 .placeholder { border: 1px dashed var(--line); border-radius: var(--radius); padding: 28px; text-align: center; color: var(--muted); }
 .project-grid { list-style: none; padding: 0; display: grid; gap: 0 48px; max-width: none !important; }
 @media (min-width: 700px) { .project-grid { grid-template-columns: repeat(2, 1fr); } }
-.project-grid li { border-top: 1px solid var(--line); padding: 20px 0; }
-.project-grid h3 { margin: 0 0 6px; }
+.project-grid li { border-top: 1px solid var(--line); padding: 20px 0; min-width: 0; }
+.project-grid h3 { margin: 0 0 6px; overflow-wrap: anywhere; }
 .project-grid p { margin: 0; color: var(--muted); }
 .project-meta { font-size: 14px; margin-top: 8px !important; }
 
@@ -234,7 +234,7 @@ a, button { touch-action: manipulation; }
 .site-nav a:active, .nav-button:active { color: #fff; background: rgba(255,255,255,.08); }
 .social a:active { background: rgba(255,255,255,.08); }
 .chips a:active, .pub-links a:active { background: var(--line); }
-.themes a:active h3, .pub-title:active { color: var(--accent-ink); }
+.themes a:active h3, a.pub-title:active { color: var(--accent-ink); }
 
 /* ---------- hover: only for devices that really hover ---------- */
 @media (hover: hover) and (pointer: fine) {
@@ -244,6 +244,6 @@ a, button { touch-action: manipulation; }
   .themes a:hover h3 { color: var(--accent-ink); }
   .social a:hover { border-color: var(--on-night-accent); }
   .chips a:hover { border-color: var(--accent-ink); }
-  .pub-title:hover { color: var(--accent-ink); text-decoration: underline; }
+  a.pub-title:hover { color: var(--accent-ink); text-decoration: underline; }
   .pub-links a:hover { border-color: var(--accent-ink); }
 }

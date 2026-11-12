@@ -16,8 +16,9 @@ permalink: /code/
   {% for p in projects %}
   <li>
     <h3><a href="{{ p.url }}">{{ p.name }}</a></h3>
-    <p>{{ p.description }}</p>
-    <p class="project-meta">{% if p.language %}{{ p.language }}{% endif %}{% if p.tags %} · {{ p.tags | join: " · " }}{% endif %}</p>
+    {% if p.description %}<p>{{ p.description }}</p>{% endif %}
+    {% assign meta = "" | split: "" %}{% if p.language %}{% assign meta = meta | push: p.language %}{% endif %}{% for t in p.tags %}{% assign meta = meta | push: t %}{% endfor %}
+    {% if meta.size > 0 %}<p class="project-meta">{{ meta | join: " · " }}</p>{% endif %}
   </li>
   {% endfor %}
 </ul>
