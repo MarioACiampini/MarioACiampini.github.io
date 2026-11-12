@@ -63,3 +63,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - Untitled*.md
