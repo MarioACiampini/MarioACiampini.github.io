@@ -1,0 +1,10 @@
+- name: LevitatedNanoparticleFPGAFeedbackController
+  description: "Real-time FPGA feedback (Red Pitaya, 125 MS/s) for cold-damping and parametric feedback of optically levitated nanoparticles, with a Python GUI."
+  url: https://github.com/MarioACiampini/LevitatedNanoparticleFPGAFeedbackController
+  tags: [feedback, FPGA]
+- name: a
+  url: https://github.com/MarioACiampini/a
+- name: landauer-erasure-analysis
+  description: Analysis notebooks for the PRR 2025 erasure paper.
+  url: https://github.com/MarioACiampini/landauer-erasure-analysis
+  language: Jupyter Notebook
