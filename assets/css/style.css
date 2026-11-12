@@ -1,24 +1,28 @@
 /* =====================================================================
    Mario A. Ciampini — personal site
-   Colour tokens first: change --laser to re-theme the whole site.
+   Colour tokens first. Palette: stormy teal, pearl aqua, alice blue,
+   almond silk, tangerine dream.
    ===================================================================== */
 
 :root {
-  --laser: #1d3bff;          /* deep laser blue: buttons and brand */
-  --accent-ink: #1d3bff;     /* accent used for text (dates, years, links) */
-  --beam: #7f97ff;           /* the laser line and fringes in the hero */
-  --night: #060b26;          /* hero / header / footer background */
-  --night-2: #0d1640;
-  --on-night: #eef1ff;
-  --on-night-muted: #b4bdea;
-  --on-night-accent: #a9b8ff;
+  --brand: #006d77;          /* stormy teal: brand, links, dates */
+  --accent-ink: #006d77;     /* accent used for text */
+  --warm: #e29578;           /* tangerine dream: buttons, markers, the beam */
+  --warm-hover: #e8a68c;
+  --almond: #ffddd2;         /* almond silk */
+  --aqua: #83c5be;           /* pearl aqua: fringes, glow */
+  --night: #00363c;          /* deep stormy teal: hero / header / footer */
+  --night-2: #004a52;
+  --on-night: #edf6f9;
+  --on-night-muted: #b9dad6;
+  --on-night-accent: #ffddd2;
 
-  --bg: #fbfbfe;
+  --bg: #f7fbfc;
   --surface: #ffffff;
-  --band: #f1f3fc;
-  --text: #12162e;
-  --muted: #555c7a;
-  --line: #e2e5f3;
+  --band: #edf6f9;           /* alice blue */
+  --text: #10292c;
+  --muted: #4d6366;
+  --line: #d3e4e8;
 
   --radius: 14px;
   --wrap: 1100px;
@@ -28,15 +32,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --accent-ink: #9aacff;
-    --bg: #070a1c; --surface: #0e1330; --band: #0b1028;
-    --text: #e7eaff; --muted: #a2abd2; --line: #1f2752;
+    --accent-ink: #83c5be;
+    --bg: #061a1d; --surface: #0b2629; --band: #0a2225;
+    --text: #e3f1f2; --muted: #a3c2c0; --line: #1a3b3f;
   }
 }
 :root[data-theme="dark"] {
-  --accent-ink: #9aacff;
-  --bg: #070a1c; --surface: #0e1330; --band: #0b1028;
-  --text: #e7eaff; --muted: #a2abd2; --line: #1f2752;
+  --accent-ink: #83c5be;
+  --bg: #061a1d; --surface: #0b2629; --band: #0a2225;
+  --text: #e3f1f2; --muted: #a3c2c0; --line: #1a3b3f;
 }
 
 /* ---------- base ---------- */
@@ -50,7 +54,7 @@ body {
 img { max-width: 100%; height: auto; }
 a { color: var(--accent-ink); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; letter-spacing: -0.015em; text-wrap: balance; }
-::selection { background: var(--laser); color: #fff; }
+::selection { background: var(--almond); color: #10292c; }
 :focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 3px; border-radius: 4px; }
 .site-header :focus-visible, .hero :focus-visible, .site-footer :focus-visible { outline-color: var(--on-night-accent); }
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 max(16px, env(safe-area-inset-right)) 0 max(16px, env(safe-area-inset-left)); }
@@ -90,7 +94,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; letter-spacing: -
 .hero, .page-hero {
   position: relative; overflow: hidden; color: var(--on-night);
   background:
-    radial-gradient(900px 500px at 85% 40%, rgba(29, 59, 255, 0.32), transparent 60%),
+    radial-gradient(900px 500px at 85% 40%, rgba(131, 197, 190, 0.22), transparent 60%),
     linear-gradient(180deg, var(--night), var(--night-2));
 }
 .hero { padding: 72px 0 96px; }
@@ -99,13 +103,13 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; letter-spacing: -
 /* interference fringes around the particle: the one authored moment */
 .fringes {
   position: absolute; inset: 0; pointer-events: none; opacity: .45;
-  background: repeating-radial-gradient(circle at 82% 45%, var(--beam) 0 1px, transparent 1px 22px);
+  background: repeating-radial-gradient(circle at 82% 45%, var(--aqua) 0 1px, transparent 1px 22px);
   -webkit-mask-image: radial-gradient(520px 420px at 82% 45%, rgba(0,0,0,.35) 20%, transparent 75%);
           mask-image: radial-gradient(520px 420px at 82% 45%, rgba(0,0,0,.35) 20%, transparent 75%);
 }
 .beam {
   position: absolute; left: -10%; right: -10%; bottom: 40px; height: 1px; pointer-events: none;
-  background: linear-gradient(90deg, transparent 10%, var(--beam) 55%, transparent 95%);
+  background: linear-gradient(90deg, transparent 10%, var(--warm) 55%, transparent 95%);
   transform: rotate(-4deg); opacity: .9;
 }
 
@@ -118,8 +122,8 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; letter-spacing: -
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; margin-top: 32px; }
 .btn {
   display: inline-block; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 15px;
-  text-decoration: none; background: var(--laser); color: #fff;
-  box-shadow: 0 6px 18px -6px rgba(29, 59, 255, .7);
+  text-decoration: none; background: var(--warm); color: #10292c;
+  box-shadow: 0 6px 18px -8px rgba(226, 149, 120, .8);
   transition: transform 160ms cubic-bezier(.23, 1, .32, 1), background 160ms ease;
 }
 .btn:active { transform: scale(.97); }
@@ -168,7 +172,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; letter-spacing: -
 .prose h3 { font-size: 20px; margin: 36px 0 8px; }
 .prose ul { padding-left: 1.2em; }
 .prose li { margin: 4px 0; }
-.prose li::marker { color: var(--accent-ink); }
+.prose li::marker { color: var(--warm); }
 .prose hr { border: 0; border-top: 1px solid var(--line); margin: 56px 0; }
 .prose blockquote { margin: 24px 0; padding: 16px 20px; background: var(--band); border-radius: var(--radius); color: var(--muted); }
 .prose blockquote p { margin: 0; }
@@ -240,7 +244,7 @@ a, button { touch-action: manipulation; }
 @media (hover: hover) and (pointer: fine) {
   a:hover { text-decoration-thickness: 2px; }
   .site-nav a:hover { color: #fff; }
-  .btn:hover { transform: translateY(-1px); background: #2f4bff; }
+  .btn:hover { transform: translateY(-1px); background: var(--warm-hover); }
   .themes a:hover h3 { color: var(--accent-ink); }
   .social a:hover { border-color: var(--on-night-accent); }
   .chips a:hover { border-color: var(--accent-ink); }
